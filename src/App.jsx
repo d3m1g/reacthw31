@@ -1,10 +1,9 @@
 import './App.css';
 import Stars from "./components/Stars"
 import { films } from './components/filmslist';
-// import { MdFavorite} from '@react-md/icon';
-// import { MdFavoriteBorder} from '@react-md/icon';
-// import { MdShare} from 'react';
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShareIcon from '@mui/icons-material/Share';
 
 function App() {
   const starsData = films.map((film, index) =>
@@ -15,9 +14,9 @@ function App() {
         <img className='img-film' src={film.img} alt={film.title} />
       </div>
       <div className='info-film'>
-        <div className='icons'>          
-          {/* <div className='icon'>{film.isLike ? <MdFavorite/> : <MdFavoriteBorder/>}</div> */}
-          {/* <div className='icon'><MdShare/></div> */}          
+        <div className='icons'>
+          <div className='icon'>{film.isLike ? <FavoriteIcon /> : <FavoriteBorderIcon />}</div>
+          <div className='icon'><ShareIcon /></div>
         </div>
         <div className='title-film'>{film.title}</div>
 
@@ -37,4 +36,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
